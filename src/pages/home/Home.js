@@ -41,22 +41,27 @@ const Home = () => {
 
     return (
         <div>
-            {/* Crea una griglia di 4 colonne per mostrare i gioielli */}
-            <Grid container spacing={2} sx={{ marginTop: "20px" }}>
-                {jewelry.map((item, index) => (
-                    // Usa il componente Card per mostrare ogni gioiello
-                    <Grid item xs={index % 3} key={index}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                image={item.image}
-                                alt={item.alt}
-                                height="200"
-                            />
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
+            <div>
+                {/* Crea una griglia di 4 colonne per mostrare i gioielli */}
+                <Grid container spacing={2} sx={{ marginTop: "20px" }}>
+                    {jewelry.map((item, index) => (
+                        // Usa il componente Card per mostrare ogni gioiello
+                        <Grid item xs={index % 3} key={index}>
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    image={item.image}
+                                    alt={item.alt}
+                                    height="200"
+                                />
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+            </div>
+            <div>
+                {process.env.REACT_APP_FIRST_KEY}
+            </div>
         </div>
     );
 };
